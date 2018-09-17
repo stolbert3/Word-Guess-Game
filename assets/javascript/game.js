@@ -11,6 +11,8 @@ $(document).ready(function() {
         $("#leftNumber").text(guessesCount);
         $("#soFarList").empty();
         $("#soFarList").text("-" + " ");
+        $("#winsNumber").text(winCount);
+        $("#lossesNumber").text(lossCount);
         randomLetter = letterArray[Math.floor(Math.random() * letterArray.length)];
         console.log("randomLetter: " + randomLetter);
     });
@@ -22,7 +24,8 @@ $(document).ready(function() {
             if (guessesCount > 0) {
                 if (userGuess === randomLetter) {
                     alert("You won!");
-                    $("#winsNumber").text(winCount + 1);
+                    winCount = winCount + 1
+                    $("#winsNumber").text(winCount);
                 }
                 else {
                     guessesCount = guessesCount - 1;
@@ -32,7 +35,8 @@ $(document).ready(function() {
                     if (guessesCount === 0) {
                         alert("You lose!");
                         alert("Click NEW GAME to try again!");
-                        $("#lossesNumber").text(lossCount + 1);
+                        lossCount = lossCount + 1
+                        $("#lossesNumber").text(lossCount);
                     }
                 }
             }

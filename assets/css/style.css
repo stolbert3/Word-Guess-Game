@@ -19,15 +19,27 @@ body {
     width: 45%;
     display: inline-block;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .guessesLeft, .guessesSoFar {
     color: FloralWhite;
     background-color: Maroon;
-    padding: 30px;
-    width: 75%;
+    padding: 20px;
+    width: 45%;
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 20px;
+}
+
+#guess {
+    border-style: solid;
+    border-color: FloralWhite;
+    border-width: thin;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 50%;
+    display: inline-block;
+    text-align: center;
 }
