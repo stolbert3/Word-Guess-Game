@@ -1,3 +1,33 @@
 body {
     text-align: center;
 }
+
+.header {
+    color: FloralWhite;
+    background-color: DarkCyan;
+    padding: 30px;
+    width: 75%;
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.winCounter, .lossCounter {
+    color: black;
+    background-color: Gainsboro;
+    padding: 20px;
+    width: 45%;
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.guessesLeft, .guessesSoFar {
+    color: FloralWhite;
+    background-color: Maroon;
+    padding: 30px;
+    width: 75%;
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

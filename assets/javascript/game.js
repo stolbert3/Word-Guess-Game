@@ -10,6 +10,7 @@ $(document).ready(function() {
         guessesCount = 6;
         $("#leftNumber").text(guessesCount);
         $("#soFarList").empty();
+        $("#soFarList").text("-" + " ");
         randomLetter = letterArray[Math.floor(Math.random() * letterArray.length)];
         console.log("randomLetter: " + randomLetter);
     });
@@ -17,21 +18,27 @@ $(document).ready(function() {
     document.onkeyup = function(event) {
         var userGuess = event.key.toLowerCase();
         console.log("userGuess: " + userGuess);
-        if (guessesCount > 0) {
-            if (userGuess === randomLetter) {
-                alert("You won!");
-                $("#winsNumber").text(winCount + 1);
-            }
-            else {
-                guessesCount = guessesCount - 1;
-                $("#leftNumber").text(guessesCount);
-                userGuess = userGuess.toUpperCase();
-                $("#soFarList").append(userGuess + " ");
-                if (guessesCount === 0) {
-                    alert("You lose!");
-                    $("#lossesNumber").text(lossCount + 1);
+        if (letterArray.includes(userGuess)) {
+            if (guessesCount > 0) {
+                if (userGuess === randomLetter) {
+                    alert("You won!");
+                    $("#winsNumber").text(winCount + 1);
+                }
+                else {
+                    guessesCount = guessesCount - 1;
+                    $("#leftNumber").text(guessesCount);
+                    userGuess = userGuess.toUpperCase();
+                    $("#soFarList").append(userGuess + " - ");
+                    if (guessesCount === 0) {
+                        alert("You lose!");
+                        alert("Click NEW GAME to try again!");
+                        $("#lossesNumber").text(lossCount + 1);
+                    }
                 }
             }
         }
+        else {
+            alert("Guess a letter only!");
+        };
     };
 });
